@@ -33,9 +33,11 @@ private:
     void recordPosition();
 
     static const int gridSize = 5;
+    static const int upgradeThreshold = 10;
     std::string name_;
     int x = 2;
     int y = 2;
+    int moveCount = 0;
     int currentHistoryIndex = 0;
     std::vector<Point2D> history = {{2, 2}};
 };

@@ -6,9 +6,9 @@
 #include <QSizePolicy>
 
 RobotGridWidget::RobotGridWidget(QWidget* parent)
-    : QWidget(parent), robotIcon("assets/robot-icon.png") {
+    : QWidget(parent), robotIcon("assets/robot-icon-new.png") {
     if (robotIcon.isNull()) {
-        robotIcon.load("../assets/robot-icon.png");
+        robotIcon.load("../assets/robot-icon-new.png");
     }
 
     setFixedSize(250, 250);

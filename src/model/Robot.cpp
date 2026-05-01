@@ -26,19 +26,23 @@ const std::vector<Point2D>& Robot::getHistory() const {
 }
 
 void Robot::moveUp() {
-    moveTo(x, y - 1);
+    int distance = (moveCount >= upgradeThreshold) ? 2 : 1;
+    moveTo(x, y - distance);
 }
 
 void Robot::moveDown() {
-    moveTo(x, y + 1);
+    int distance = (moveCount >= upgradeThreshold) ? 2 : 1;
+    moveTo(x, y + distance);
 }
 
 void Robot::moveLeft() {
-    moveTo(x - 1, y);
+    int distance = (moveCount >= upgradeThreshold) ? 2 : 1;
+    moveTo(x - distance, y);
 }
 
 void Robot::moveRight() {
-    moveTo(x + 1, y);
+    int distance = (moveCount >= upgradeThreshold) ? 2 : 1;
+    moveTo(x + distance, y);
 }
 
 void Robot::undo() {
@@ -114,6 +118,7 @@ void Robot::moveTo(int newX, int newY) {
 
     x = newX;
     y = newY;
+    moveCount++;
     recordPosition();
 }
 
